@@ -43,7 +43,7 @@ class BootstrapAdminImageWidget(forms.ClearableFileInput):
             try:
                 Image.open(os.path.join(settings.MEDIA_ROOT, file_name))
 
-            except IOError, e:
+            except IOError as e:
                 logger.error(e)
 
             self.template_with_initial = render_to_string(
